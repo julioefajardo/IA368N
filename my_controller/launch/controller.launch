@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <param name="k_rho" value="0.5" type="double"/>
+  <param name="k_alpha" value="1.3" type="double"/>
+  <param name="k_beta" value="-0.8" type="double"/>
+  <param name="backward_allowed" value="false" type="bool"/>
+  <param name="use_constant_vel" value="false" type="bool"/>
+  <param name="constant_vel" value="0.15" type="double"/>
+
+  <node name="my_controller_node" pkg="my_controller"  type="my_controller_node" output="screen"/> 
+
+  <!-- <node pkg="robot_setup_tf" type="tf_broadcaster" name="tf_broadcaster" output="screen"/> -->
+ 
+  <include file="$(find hector_slam_launch)/launch/vrep.launch"/> 
+  <!-- <include file="$(find hector_costmap)/launch/vrep_costmap.launch"/>
+  <include file="$(find hector_exploration_node)/launch/exploration_planner.launch"/> -->
+  
+
+  <!-- <include file="$(find hector_elevation_mapping)/launch/elevation_mapping_node.launch"/> -->
+  <!-- <include file="$(find hector_elevation_visualization)/launch/hector_elevation_visualization.launch"/> -->
+  <!-- <include file="$(find hector_costmap)/launch/costmap.launch"/> -->
+  <!-- <include file="$(find hector_exploration_node)/launch/exploration_planner.launch"/> -->
+  <!-- <include file="$(find hector_driving_aid_markers)/launch/hector_ugv.launch"/> --> 
+  <!-- <include file="$(find hector_path_follower)/launch/path.launch"/> -->
+  <!-- <include file="$(find hector_exploration_controller)/launch/controller.launch"/> -->
+ 
+</launch>
